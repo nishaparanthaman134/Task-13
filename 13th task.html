@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Mark Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            text-align: center;
+        }
+
+        .box {
+            background: white;
+            width: 350px;
+            margin: 60px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            width: 80%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            color: blue;
+        }
+
+        #numbers {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Student Mark Checker</h1>
+
+        <input type="number" id="mark" placeholder="Enter your mark">
+        <br>
+        <button onclick="checkResult()">Check Result</button>
+        <button onclick="showTopperMarks()">Show Topper Marks</button>
+
+        <div id="result"></div>
+        <div id="numbers"></div>
+    </div>
+
+    <script>
+        function checkResult() {
+            let mark = document.getElementById("mark").value;
+            let message = "";
+
+            // Conditional statements
+            if (mark >= 90) {
+                message = "Grade A - Excellent!";
+            } else if (mark >= 75) {
+                message = "Grade B - Very Good!";
+            } else if (mark >= 50) {
+                message = "Pass - Good!";
+            } else {
+                message = "Fail - Try Again!";
+            }
+
+            document.getElementById("result").innerHTML = message;
+        }
+
+        function showTopperMarks() {
+            let text = "Topper Marks:<br>";
+
+            // Loop example
+            for (let i = 95; i <= 100; i++) {
+                text += i + "<br>";
+            }
+
+            document.getElementById("numbers").innerHTML = text;
+        }
+    </script>
+
+</body>
+</html>
